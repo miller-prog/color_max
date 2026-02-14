@@ -1,0 +1,7 @@
+# PyTorch 2.9.1 with CUDA for RTX 5060 (sm_120) - install via install_requirements.ps1 or:
+# pip install torch==2.9.1 torchvision==0.24.1 torchaudio==2.9.1 --index-url https://download.pytorch.org/whl/cu128
+# (cu128 required for RTX 50 series; cu126 for older GPUs)
+
+torch==2.9.1
+torchvision==0.24.1
+torchaudio==2.9.1
