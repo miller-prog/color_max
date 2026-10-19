@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Token Color Mapper</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Token Color Mapper</h1>
+        
+        <div class="controls">
+            <div class="control-group">
+                <label for="textInput">Enter Text:</label>
+                <textarea id="textInput" placeholder="Type or paste your text here..."></textarea>
+            </div>
+            
+            <div class="control-group">
+                <label for="modeSelect">Color Mapping Mode:</label>
+                <select id="modeSelect">
+                    <option value="standard">Standard (Deterministic)</option>
+                    <option value="random">Random</option>
+                </select>
+            </div>
+            
+            <div class="control-group">
+                <label for="pixelSize">Pixel Size: <span id="pixelSizeValue">10</span>px</label>
+                <input type="range" id="pixelSize" min="1" max="50" value="10">
+            </div>
+            
+            <div class="control-group">
+                <label>
+                    <input type="checkbox" id="emphasizeSimilarity" style="margin-right: 8px;">
+                    Emphasize Color Similarity
+                </label>
+            </div>
+            
+            <div class="control-group" id="similarityThresholdGroup" style="display: none;">
+                <label for="similarityThreshold">Similarity Threshold: <span id="similarityThresholdValue">50</span>%</label>
+                <input type="range" id="similarityThreshold" min="0" max="100" value="50">
+                <small style="color: #666; display: block; margin-top: 4px;">Lower values group more similar colors together</small>
+            </div>
+            
+            <div class="control-group">
+                <label>
+                    <input type="checkbox" id="highlightTrends" style="margin-right: 8px;">
+                    Highlight Pixel Trends
+                </label>
+            </div>
+            
+            <div class="control-group" id="trendControlsGroup" style="display: none;">
+                <div style="margin-bottom: 10px;">
+                    <label style="display: flex; align-items: center; margin-bottom: 8px;">
+                        <input type="checkbox" id="trendHorizontal" checked style="margin-right: 8px;">
+                        Horizontal
+                    </label>
+                    <label style="display: flex; align-items: center; margin-bottom: 8px;">
+                        <input type="checkbox" id="trendVertical" checked style="margin-right: 8px;">
+                        Vertical
+                    </label>
+                    <label style="display: flex; align-items: center; margin-bottom: 8px;">
+                        <input type="checkbox" id="trendDiagonal" checked style="margin-right: 8px;">
+                        Diagonal
+                    </label>
+                </div>
+                
+                <label for="trendMinLength">Minimum Trend Length: <span id="trendMinLengthValue">3</span> pixels</label>
+                <input type="range" id="trendMinLength" min="2" max="10" value="3">
+                
+                <label for="trendSimilarity" style="margin-top: 10px;">Trend Similarity Threshold: <span id="trendSimilarityValue">30</span>%</label>
+                <input type="range" id="trendSimilarity" min="0" max="100" value="30">
+                
+                <label for="trendOpacity" style="margin-top: 10px;">Highlight Opacity: <span id="trendOpacityValue">50</span>%</label>
+                <input type="range" id="trendOpacity" min="0" max="100" value="50">
+            </div>
+            
+            <div class="button-group">
+                <button id="randomizeBtn">Re-randomize Colors</button>
+                <button id="exportImageBtn">Export High-Res Image</button>
+                <button id="downloadJsonBtn">Download Color Mapping (JSON)</button>
+            </div>
+        </div>
+        
+        <div class="canvas-container">
+            <canvas id="colorCanvas"></canvas>
+        </div>
+    </div>
+    
+    <script src="app.js"></script>
+</body>
+</html>
