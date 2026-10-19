@@ -1,0 +1,11 @@
+{
+  "pixel_size": 10,
+  "mode": "standard",
+  "shape": "square",
+  "pattern": "row-major",
+  "tokenize_mode": "words",
+  "export_scale": "4",
+  "export_scale_custom": "64",
+  "trend_opacity": 50,
+  "highlight_color": "#ffff00"
+}

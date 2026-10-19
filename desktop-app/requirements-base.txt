@@ -1,0 +1,6 @@
+# Base dependencies (no PyTorch). Install into venv first.
+Pillow>=10.0.0
+numpy>=1.24.0
+psutil>=5.9.0
+# Optional but recommended for speed:
+numba>=0.58.0
